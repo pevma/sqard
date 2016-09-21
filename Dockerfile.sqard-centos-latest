@@ -1,0 +1,21 @@
+FROM centos:latest
+MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
+
+RUN yum -y update &&  \
+ yum -y install \
+ wget git which tar make python \
+ gcc-c++ gcc gdb clang pkgconfig libasan flex bison \
+ libtool libpcap-devel pcre-devel zlib-devel \
+ libyaml-devel file-devel jansson-devel nss-devel \
+ libcap-ng-devel libnet-devel libnetfilter_queue-devel \
+ lua-devel GeoIP-devel hiredis-devel
+ 
+RUN yum -y update &&  \
+ yum -y install \
+ https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+ 
+RUN yum -y update &&  \
+ yum -y install \
+ libnetfilter_log-devel
+
+RUN mkdir -p /opt/QA/results
