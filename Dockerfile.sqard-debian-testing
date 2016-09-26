@@ -1,0 +1,15 @@
+FROM debian:testing
+MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+ DEBIAN_FRONTEND=noninteractive apt-get install -y \
+ wget git  python coccinelle clang flex bison \
+ build-essential autoconf automake libtool pkg-config \
+ libpcre3-dbg libpcre3-dev  libpcap-dev \
+ libnet1-dev libyaml-0-2 libyaml-dev zlib1g-dev \
+ libcap-ng-dev libnetfilter-queue-dev \
+ libjansson-dev libgeoip-dev libnss3-dev libnspr4-dev \
+ liblua5.1-0-dev libmagic-dev \
+ libhiredis-dev libprelude-dev libnetfilter-log-dev
+
+RUN mkdir -p /opt/QA/results
