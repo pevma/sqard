@@ -3,7 +3,7 @@ MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN zypper -n update &&  \
  zypper -n install \
- which wget tar git coccinelle libclang flex bison make \
+ which wget tar git coccinelle clang flex bison make \
  autoconf automake libtool gcc gcc-c++ pkg-config \
  libpcre1 pcre-devel libyaml-devel \
  libpcap-devel zlib-devel file-devel libnetfilter_queue-devel \
