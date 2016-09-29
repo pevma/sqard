@@ -4,10 +4,10 @@ MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 RUN yum -y update &&  \
  yum -y install \
  wget git which tar make python \
- gcc-c++ gcc gdb clang pkgconfig libasan flex bison \
+ gcc-c++ gcc gdb pkgconfig flex bison \
  libtool libpcap-devel pcre-devel zlib-devel \
- libyaml-devel file-devel jansson-devel nss-devel \
- libcap-ng-devel libnet-devel libnetfilter_queue-devel \
+ file libyaml-devel nss-devel \
+ libnet-devel \
  lua-devel GeoIP-devel 
 
 RUN yum -y update &&  \
