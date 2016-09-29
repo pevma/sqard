@@ -1,0 +1,16 @@
+FROM centos:5
+MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
+
+RUN yum -y update &&  \
+ yum -y install \
+ wget git which tar make python \
+ gcc-c++ gcc gdb clang pkgconfig libasan flex bison \
+ libtool libpcap-devel pcre-devel zlib-devel \
+ libyaml-devel file-devel jansson-devel nss-devel \
+ libcap-ng-devel libnet-devel libnetfilter_queue-devel \
+ lua-devel GeoIP-devel 
+
+RUN yum -y update &&  \
+ yum -y install epel-release 
+
+RUN mkdir -p /opt/QA/results
