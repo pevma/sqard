@@ -2,6 +2,9 @@ FROM centos:5
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN yum -y update &&  \
+ yum -y install epel-release 
+ 
+RUN yum -y update &&  \
  yum -y install \
  wget git which tar make python \
  gcc-c++ gcc gdb pkgconfig flex bison \
@@ -9,8 +12,5 @@ RUN yum -y update &&  \
  file libyaml-devel nss-devel \
  libnet-devel \
  lua-devel GeoIP-devel 
-
-RUN yum -y update &&  \
- yum -y install epel-release 
 
 RUN mkdir -p /opt/QA/results
