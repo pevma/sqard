@@ -11,6 +11,6 @@ RUN yum -y update &&  \
  libtool libpcap-devel pcre-devel zlib-devel \
  file libyaml-devel nss-devel \
  libnet-devel \
- lua-devel GeoIP-devel 
+ lua-devel GeoIP-devel valgrind 
 
 RUN mkdir -p /opt/QA/results

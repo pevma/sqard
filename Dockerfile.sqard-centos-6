@@ -8,7 +8,7 @@ RUN yum -y update &&  \
  libtool libpcap-devel pcre-devel zlib-devel \
  libyaml-devel file-devel jansson-devel nss-devel \
  libcap-ng-devel libnet-devel libnetfilter_queue-devel \
- lua-devel GeoIP-devel 
+ lua-devel GeoIP-devel valgrind 
  
 RUN yum -y update &&  \
  yum -y install \

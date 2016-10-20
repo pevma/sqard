@@ -10,6 +10,7 @@ RUN zypper -n update &&  \
  libjansson-devel libcap-ng-devel lua-devel \
  mozilla-nspr-devel mozilla-nss-tools mozilla-nss-devel \
  GeoIP libGeoIP-devel libcap-ng0 libcap-ng-devel libmagic1 file-magic \
- hiredis-devel libnetfilter_log-devel 
+ hiredis-devel libnetfilter_log-devel \
+ valgrind 
 
 RUN mkdir -p /opt/QA/results
