@@ -11,7 +11,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
  libmagic-dev libnss3-dev libnspr4-dev libjansson-dev \
  libgeoip-dev liblua5.1-0-dev  \
  libhiredis-dev libprelude-dev libnetfilter-log-dev \
- valgrind libdevel-gdb-perl libcapture-tiny-perl 
+ valgrind libdevel-gdb-perl libcapture-tiny-perl \
+ wireshark-common 
 
 RUN mkdir -p /opt/QA/results
 
