@@ -1,0 +1,14 @@
+FROM ubuntu:xenial
+MAINTAINER pevma "pmanev@oisf.net"
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+ DEBIAN_FRONTEND=noninteractive apt-get -y upgrade && \
+ DEBIAN_FRONTEND=noninteractive apt-get install -y python-software-properties \
+ software-properties-common net-tools iputils-ping man-db ethtool 
+ 
+RUN DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:oisf/suricata-beta
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+ DEBIAN_FRONTEND=noninteractive apt-get install -y suricata-dbg && \
+ rm -rf /var/lib/apt/lists/*
+
+CMD service suricata start && bash
