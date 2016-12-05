@@ -8,7 +8,8 @@ RUN yum -y update &&  \
  libtool libpcap-devel pcre-devel zlib-devel \
  libyaml-devel file-devel jansson-devel nss-devel \
  libcap-ng-devel libnet-devel libnetfilter_queue-devel \
- lua-devel GeoIP-devel valgrind 
+ lua-devel GeoIP-devel valgrind \
+ && yum clean all 
  
 RUN yum -y update &&  \
  yum -y install \
@@ -16,6 +17,7 @@ RUN yum -y update &&  \
  
 RUN yum -y update &&  \
  yum -y install \
- libnetfilter_log-devel hiredis-devel
+ libnetfilter_log-devel hiredis-devel \
+ && yum clean all 
 
 RUN mkdir -p /opt/QA/results
