@@ -14,4 +14,9 @@ RUN yum -y update &&  \
  lua-devel GeoIP-devel valgrind \
  && yum clean all 
 
+RUN yum -y update &&  \
+ yum -y install \
+ man man-pages iputils net-tools ethtool \
+ && yum clean all 
+
 RUN mkdir -p /opt/QA/results
