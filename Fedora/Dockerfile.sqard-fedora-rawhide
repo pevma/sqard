@@ -10,5 +10,10 @@ RUN dnf -y update &&  \
  lua-devel GeoIP-devel hiredis-devel libnetfilter_log-devel \
  valgrind \
  && dnf clean all 
+
+RUN dnf -y update &&  \
+ dnf -y install \
+ man man-pages iputils net-tools ethtool \
+ && dnf clean all 
   
 RUN mkdir -p /opt/QA/results
