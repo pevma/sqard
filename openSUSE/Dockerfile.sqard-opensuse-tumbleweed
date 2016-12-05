@@ -11,6 +11,7 @@ RUN zypper -n update &&  \
  mozilla-nspr-devel mozilla-nss-tools mozilla-nss-devel \
  GeoIP libGeoIP-devel libcap-ng0 libcap-ng-devel libmagic1 file-magic \
  hiredis-devel libnetfilter_log-devel \
- valgrind 
+ valgrind \
+ && zypper clean -a 
 
 RUN mkdir -p /opt/QA/results
