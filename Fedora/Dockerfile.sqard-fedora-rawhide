@@ -8,6 +8,7 @@ RUN dnf -y update &&  \
  pcre-devel libyaml-devel file-devel zlib-devel jansson-devel \
  nss-devel libnet-devel libnetfilter_queue-devel \
  lua-devel GeoIP-devel hiredis-devel libnetfilter_log-devel \
- valgrind
+ valgrind \
+ && dnf clean all 
   
 RUN mkdir -p /opt/QA/results
