@@ -13,4 +13,9 @@ RUN zypper -n update &&  \
  hiredis-devel libnetfilter_log-devel valgrind \
  && zypper clean -a 
 
+RUN zypper -n update &&  \
+ zypper -n install \
+ man man-pages iputils net-tools ethtool \
+ && zypper clean -a 
+ 
 RUN mkdir -p /opt/QA/results

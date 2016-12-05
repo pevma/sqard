@@ -14,4 +14,9 @@ RUN zypper -n update &&  \
  valgrind \
  && zypper clean -a 
 
+RUN zypper -n update &&  \
+ zypper -n install \
+ man man-pages iputils net-tools ethtool \
+ && zypper clean -a 
+
 RUN mkdir -p /opt/QA/results
