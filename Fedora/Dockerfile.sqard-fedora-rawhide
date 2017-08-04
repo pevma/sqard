@@ -3,7 +3,7 @@ MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN dnf -y update &&  \
  dnf -y install \
- wget tar make which git python coccinelle clang libasan flex bison \
+ wget curl tar make which git python coccinelle clang libasan flex bison \
  pkgconfig  gcc-c++ gdb gcc libtool libpcap-devel libcap-ng-devel \
  pcre-devel libyaml-devel file-devel zlib-devel jansson-devel \
  nss-devel libnet-devel libnetfilter_queue-devel \
@@ -17,3 +17,6 @@ RUN dnf -y update &&  \
  && dnf clean all 
   
 RUN mkdir -p /opt/QA/results
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH=/root/.cargo/bin:$PATH

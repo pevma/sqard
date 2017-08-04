@@ -7,7 +7,7 @@ RUN yum -y update &&  \
 
 RUN yum -y update &&  \
  yum -y install \
- wget git which tar make python \
+ wget curl git which tar make python \
  gcc-c++ gcc gdb clang pkgconfig libasan flex bison \
  libtool libpcap-devel pcre-devel zlib-devel \
  libyaml-devel file-devel jansson-devel nss-devel \
@@ -26,3 +26,6 @@ RUN yum -y update &&  \
  && yum clean all
 
 RUN mkdir -p /opt/QA/results
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH=/root/.cargo/bin:$PATH

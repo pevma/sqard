@@ -3,7 +3,7 @@ MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN zypper -n update &&  \
  zypper -n install \
- which wget tar git coccinelle clang flex bison make \
+ which wget curl tar git coccinelle clang flex bison make \
  autoconf automake libtool gcc gcc-c++ pkg-config \
  libpcre1 pcre-devel libyaml-devel \
  libpcap-devel zlib-devel file-devel libnetfilter_queue-devel \
@@ -19,3 +19,6 @@ RUN zypper -n update &&  \
  && zypper clean -a 
  
 RUN mkdir -p /opt/QA/results
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH=/root/.cargo/bin:$PATH
