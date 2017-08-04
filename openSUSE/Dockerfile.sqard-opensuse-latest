@@ -7,7 +7,7 @@ RUN zypper -n update &&  \
  autoconf automake libtool gcc gcc-c++ pkg-config \
  libpcre1 pcre-devel libyaml-devel \
  libpcap-devel zlib-devel file-devel libnetfilter_queue-devel \
- libjansson-devel libcap-ng-devel liblua5_2 lua52-devel \
+ libjansson-devel libcap-ng-devel lua-devel \
  mozilla-nspr-devel mozilla-nss-tools mozilla-nss-devel \
  GeoIP libGeoIP-devel libcap-ng0 libcap-ng-devel libmagic1 file-magic \
  hiredis-devel libnetfilter_log-devel valgrind \
