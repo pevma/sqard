@@ -1,4 +1,4 @@
-FROM ubuntu:zesty
+FROM ubuntu:rolling
 MAINTAINER pevma "pmanev@oisf.net"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
