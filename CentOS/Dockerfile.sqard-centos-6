@@ -12,7 +12,7 @@ RUN yum -y update &&  \
  libtool libpcap-devel pcre-devel zlib-devel \
  libyaml-devel file-devel jansson-devel nss-devel \
  libcap-ng-devel libnet-devel libnetfilter_queue-devel \
- lua-devel GeoIP-devel valgrind \
+ lua-devel GeoIP-devel valgrind python-pyyaml jq \
  && yum clean all 
  
 RUN yum -y update &&  \

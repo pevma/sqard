@@ -11,7 +11,7 @@ RUN zypper -n update &&  \
  mozilla-nspr-devel mozilla-nss-tools mozilla-nss-devel \
  GeoIP libGeoIP-devel libcap-ng0 libcap-ng-devel libmagic1 file-magic \
  hiredis-devel libnetfilter_log-devel \
- valgrind \
+ valgrind python-yaml jq \
  && zypper clean -a 
 
 RUN zypper -n update &&  \
