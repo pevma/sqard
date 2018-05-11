@@ -14,7 +14,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
  valgrind libdevel-gdb-perl libcapture-tiny-perl \
  wireshark-common libhyperscan4 libhyperscan-dev \
  g++-multilib python-yaml jq \
- && apt-get clean \
+ && apt-get clean clang-tools \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
