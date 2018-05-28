@@ -1,14 +1,14 @@
-FROM multiarch/ubuntu-core:ppc64el-xenial
+FROM ppc64le/ubuntu:xenial
+
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
+# From:
+# https://github.com/multiarch/qemu-user-static/blob/master/README.md
 # The following needs to be in place for the docker to be run on 
-# Debian/Ubuntu 64 bit machine :
+# Debian/Ubuntu Linux 64 bit machine :
 #apt get install -y qemu qemu-user-static qemu-user binfmt-support
-#docker run --rm --privileged multiarch/qemu-user-static:register
-
-#if you need to test and try it out that it has been a successful 
-# registration :
-#docker run -it --rm multiarch/alpine:aarch64-edge /bin/sh
+#docker run --rm --privileged multiarch/qemu-user-static:register --reset
+#docker run -it --rm -v /usr/bin/qemu-ppc64le-static:/usr/bin/qemu-ppc64le-static pevma/sqard:ubuntu-ppc64le-xenial /bin/bash
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  DEBIAN_FRONTEND=noninteractive apt-get install -y \
