@@ -8,7 +8,7 @@ RUN dnf -y update &&  \
  pcre-devel libyaml-devel file-devel zlib-devel jansson-devel \
  nss-devel libnet-devel libnetfilter_queue-devel \
  lua-devel GeoIP-devel hiredis-devel libnetfilter_log-devel \
- valgrind jq \
+ valgrind jq libevent-devel\
  && dnf clean all 
 
 RUN dnf -y update &&  \
