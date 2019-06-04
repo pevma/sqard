@@ -1,4 +1,4 @@
-FROM opensuse:tumbleweed
+FROM opensuse/tumbleweed
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN zypper -n update &&  \
