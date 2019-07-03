@@ -7,7 +7,7 @@ RUN dnf -y update &&  \
  pkgconfig  gcc-c++ gdb gcc libtool libpcap-devel libcap-ng-devel \
  pcre-devel libyaml-devel file-devel zlib-devel jansson-devel \
  nss-devel libnet-devel libnetfilter_queue-devel \
- lua-devel GeoIP-devel hiredis-devel libnetfilter_log-devel \
+ lua-devel libmaxminddb-devel hiredis-devel libnetfilter_log-devel \
  valgrind jq libevent-devel\
  && dnf clean all 
 
