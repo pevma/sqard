@@ -9,7 +9,8 @@ RUN zypper -n update &&  \
  libpcap-devel zlib-devel file-devel libnetfilter_queue-devel \
  libjansson-devel libcap-ng-devel lua-devel \
  mozilla-nspr-devel mozilla-nss-tools mozilla-nss-devel \
- GeoIP liblibmaxminddb-devel libcap-ng0 libcap-ng-devel libmagic1 file-magic \
+ GeoIP libmaxminddb-devel libmaxminddb0 gzip \
+ libcap-ng0 libcap-ng-devel libmagic1 file-magic \
  hiredis-devel libnetfilter_log-devel valgrind python-yaml jq \
  && zypper clean -a 
 
