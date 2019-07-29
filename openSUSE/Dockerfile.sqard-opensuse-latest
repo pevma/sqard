@@ -1,4 +1,4 @@
-FROM opensuse:latest
+FROM opensuse/latest
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN zypper -n update &&  \
