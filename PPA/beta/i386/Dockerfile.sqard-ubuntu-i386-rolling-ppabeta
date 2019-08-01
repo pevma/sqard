@@ -1,7 +1,7 @@
 FROM i386/ubuntu:rolling
 MAINTAINER pevma "pmanev@oisf.net"
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  DEBIAN_FRONTEND=noninteractive apt-get -y upgrade && \
  DEBIAN_FRONTEND=noninteractive apt-get install -y \
  software-properties-common net-tools iputils-ping man-db ethtool jq \

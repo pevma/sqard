@@ -1,7 +1,7 @@
 FROM ubuntu:rolling
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  DEBIAN_FRONTEND=noninteractive apt-get install -y \
  wget curl python git coccinelle clang flex bison  \
  build-essential autoconf automake libtool pkg-config \

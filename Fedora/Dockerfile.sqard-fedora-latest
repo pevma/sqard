@@ -1,7 +1,7 @@
 FROM fedora:latest
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
-RUN dnf -y update &&  \
+RUN dnf -y update && dnf -y upgrade &&  \
  dnf -y install \
  wget curl tar make which git python coccinelle clang libasan flex bison \
  pkgconfig  gcc-c++ gdb gcc libtool libpcap-devel libcap-ng-devel \
