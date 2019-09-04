@@ -9,7 +9,7 @@ RUN yum -y update &&  \
  yum -y install \
  wget curl git which tar make python \
  gcc-c++ gcc gdb clang pkgconfig libasan flex bison \
- libtool libpcap-devel pcre-devel zlib-devel \
+ libtool libpcap-devel pcre-devel zlib-devel xz-devel \
  libyaml-devel file-devel jansson-devel nss-devel \
  libcap-ng-devel libnet-devel libnetfilter_queue-devel \
  lua-devel libmaxminddb-devel valgrind python-pyyaml jq \

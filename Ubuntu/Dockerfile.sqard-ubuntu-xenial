@@ -8,7 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  libpcap-dev libcap-ng-dev libnetfilter-queue-dev \
  libpcre3-dev libpcre3 libpcre3-dbg \
  libnet1-dev libyaml-0-2 libyaml-dev zlib1g-dev \
- libmagic-dev libnss3-dev libnspr4-dev libjansson-dev \
+ libmagic-dev liblzma-dev libnss3-dev libnspr4-dev libjansson-dev \
  libmaxminddb-dev liblua5.1-0-dev  \
  libhiredis-dev libprelude-dev libnetfilter-log-dev \
  valgrind libdevel-gdb-perl libcapture-tiny-perl \
