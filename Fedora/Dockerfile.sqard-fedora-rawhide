@@ -8,7 +8,7 @@ RUN dnf -y update && dnf -y upgrade && \
  pcre-devel libyaml-devel file-devel zlib-devel xz-devel jansson-devel \
  nss-devel libnet-devel libnetfilter_queue-devel \
  lua-devel libmaxminddb-devel hiredis-devel libnetfilter_log-devel \
- valgrind python-pyyaml jq libevent-devel \
+ valgrind python-pyyaml jq libevent-devel lz4-devel python3-distutils-extra \
  && dnf clean all 
 
 RUN dnf -y update &&  \

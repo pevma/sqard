@@ -13,6 +13,7 @@ RUN yum -y update &&  \
  libyaml-devel file-devel jansson-devel nss-devel \
  libcap-ng-devel libnet-devel libnetfilter_queue-devel \
  lua-devel libmaxminddb-devel valgrind python-pyyaml jq \
+ lz4-devel python3-distutils-extra \
  && yum clean all 
  
 RUN yum -y update &&  \
