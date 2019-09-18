@@ -12,7 +12,7 @@ RUN yum -y update &&  \
  libtool libpcap-devel pcre-devel zlib-devel xz-devel \
  libyaml-devel file-devel jansson-devel nss-devel \
  libcap-ng-devel libnet-devel libnetfilter_queue-devel \
- lua-devel libmaxminddb-devel valgrind python-pyyaml jq \
+ lua-devel libmaxminddb-devel valgrind PyYAML jq \
  libevent-devel lz4-devel python3-distutils-extra \
  && yum clean all 
  
