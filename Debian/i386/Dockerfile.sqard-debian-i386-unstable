@@ -13,7 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  libhiredis-dev libprelude-dev libnetfilter-log-dev \
  valgrind libdevel-gdb-perl libcapture-tiny-perl \
  wireshark-common libhyperscan5 libhyperscan-dev \
- python-yaml jq clang-tools-6.0 libevent-dev \
+ python3-yaml jq clang-tools-6.0 libevent-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 

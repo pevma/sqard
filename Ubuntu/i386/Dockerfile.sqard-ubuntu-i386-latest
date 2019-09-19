@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  libmaxminddb-dev liblz4-dev python3-distutils-extra liblua5.1-0-dev  \
  libhiredis-dev libprelude-dev libnetfilter-log-dev \
  valgrind libdevel-gdb-perl libcapture-tiny-perl \
- wireshark-common python-yaml jq clang-tools \
+ wireshark-common python3-yaml jq clang-tools \
  libevent-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
