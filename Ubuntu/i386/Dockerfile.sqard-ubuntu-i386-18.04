@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM i386/ubuntu:18.04
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
@@ -8,11 +8,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  libpcap-dev libcap-ng-dev libnetfilter-queue-dev \
  libpcre3-dev libpcre3 libpcre3-dbg \
  libnet1-dev libyaml-0-2 libyaml-dev zlib1g-dev \
- libmagic-dev liblzma-dev libnss3-dev libnspr4-dev libjansson-dev \
+ libmagic-dev liblzma-dev liblzma-dev libnss3-dev libnspr4-dev libjansson-dev \
  libmaxminddb-dev liblz4-dev python3-distutils-extra liblua5.1-0-dev libluajit-5.1-dev \
  libhiredis-dev libprelude-dev libnetfilter-log-dev \
  valgrind libdevel-gdb-perl libcapture-tiny-perl \
- wireshark-common g++-multilib python3-yaml \
+ wireshark-common python3-yaml \
  python-yaml jq clang-tools libevent-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
@@ -25,6 +25,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 
 RUN mkdir -p /opt/QA/results
 
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+RUN curl https://sh.rustup.rs -sSf | setarch i386 sh -s -- -y
 ENV PATH=/root/.cargo/bin:$PATH
 RUN cargo install -f cbindgen --root /usr/
+
