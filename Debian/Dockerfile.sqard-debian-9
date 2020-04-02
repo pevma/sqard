@@ -1,0 +1,30 @@
+FROM debian:9
+MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
+ DEBIAN_FRONTEND=noninteractive apt-get install -y \
+ wget curl git  python coccinelle clang flex bison \
+ build-essential autoconf automake libtool pkg-config \
+ libpcre3-dbg libpcre3-dev  libpcap-dev \
+ libnet1-dev libyaml-0-2 libyaml-dev zlib1g-dev \
+ libcap-ng-dev libnetfilter-queue-dev \
+ libjansson-dev libmaxminddb-dev libnss3-dev libnspr4-dev \
+ liblua5.1-0-dev libmagic-dev liblz4-dev python3-distutils-extra liblzma-dev \
+ libhiredis-dev libprelude-dev libnetfilter-log-dev \
+ valgrind libdevel-gdb-perl libcapture-tiny-perl \
+ wireshark-common libhyperscan4 libhyperscan-dev \
+ g++-multilib python-yaml python3-yaml jq \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+ DEBIAN_FRONTEND=noninteractive apt-get install -y \
+ net-tools iputils-ping man-db ethtool \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
+
+RUN mkdir -p /opt/QA/results
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH=/root/.cargo/bin:$PATH
+RUN cargo install -f cbindgen --root /usr/
