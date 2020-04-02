@@ -28,3 +28,4 @@ RUN mkdir -p /opt/QA/results
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH=/root/.cargo/bin:$PATH
+RUN cargo install -f cbindgen --root /usr/
