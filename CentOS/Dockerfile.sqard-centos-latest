@@ -3,16 +3,16 @@ MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN yum -y update &&  \
  yum -y install \
- https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+ https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 RUN yum -y update &&  \
  yum -y install \
- wget curl git which tar make python \
+ wget curl git which tar make python3 \
  gcc-c++ gcc gdb clang pkgconfig libasan flex bison \
  libtool libpcap-devel pcre-devel zlib-devel xz-devel \
  libyaml-devel file-devel jansson-devel nss-devel \
  libcap-ng-devel libnet-devel libnetfilter_queue-devel \
- lua-devel libmaxminddb-devel valgrind PyYAML jq \
+ lua-devel libmaxminddb-devel valgrind python2-pyyaml python3-pyyaml jq \
  libevent-devel lz4-devel python3-distutils-extra \
  && yum clean all 
  
@@ -30,3 +30,34 @@ RUN mkdir -p /opt/QA/results
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH=/root/.cargo/bin:$PATH
+
+
+ yum -y update &&  \
+ yum -y install \
+ https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
+ yum -y update &&  \
+ yum -y install \
+ wget curl git which tar make python3 \
+ gcc-c++ gcc gdb clang pkgconfig libasan flex bison \
+ libtool libpcap-devel pcre-devel zlib-devel xz-devel \
+ libyaml-devel file-devel jansson-devel nss-devel \
+ libcap-ng-devel libnet-devel libnetfilter_queue-devel \
+ lua-devel libmaxminddb-devel valgrind python3-pyyaml jq \
+ libevent-devel lz4-devel python3-distutils-extra \
+  --enablerepo=PowerTools \
+ && yum clean all && \
+  yum -y update &&  \
+ yum -y install \
+ libnetfilter_log-devel hiredis-devel \
+  --enablerepo=PowerTools \
+ && yum clean all && \
+ yum -y update &&  \
+ yum -y install \
+ man man-pages iputils net-tools ethtool \
+  --enablerepo=PowerTools \
+ && yum clean all && \
+ curl https://sh.rustup.rs -sSf | sh -s -- -y && \
+ source $HOME/.cargo/env && \
+ cargo install -f cbindgen --root /usr/ && \
+ cd /opt/ && git clone  https://github.com/OISF/suricata.git && cd suricata && git clone https://github.com/OISF/libhtp.git -b 0.5.x  && git clone https://github.com/OISF/suricata-update.git suricataupdate-git && mv suricataupdate-git/* suricata-update/ &&  ./autogen.sh && ./configure --prefix=/opt/suritest/ --sysconfdir=/opt/suritest/etc --localstatedir=/opt/suritest/var   CFLAGS="-ggdb3 -Werror -Wchar-subscripts -fno-strict-aliasing -fstack-protector-all -fsanitize=address -fno-omit-frame-pointer -Wno-unused-parameter -Wno-unused-function"  ac_cv_func_malloc_0_nonnull=yes ac_cv_func_realloc_0_nonnull=yes  --enable-geoip --enable-rust-strict  --enable-lua  && make clean && make -j2 &&  make install && make install-full &&  ldconfig
+ 

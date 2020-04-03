@@ -1,9 +1,9 @@
-FROM centos:6
+FROM centos:8
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN yum -y update &&  \
  yum -y install \
- https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+ https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 RUN yum -y update &&  \
  yum -y install \
@@ -12,19 +12,21 @@ RUN yum -y update &&  \
  libtool libpcap-devel pcre-devel zlib-devel xz-devel \
  libyaml-devel file-devel jansson-devel nss-devel \
  libcap-ng-devel libnet-devel libnetfilter_queue-devel \
- lua-devel libmaxminddb-devel valgrind \
- PyYAML python34-yaml python-yaml python3-yaml jq \
- lz4-devel python3-distutils-extra \
+ lua-devel libmaxminddb-devel valgrind python3-pyyaml jq \
+ libevent-devel lz4-devel python3-distutils-extra \
+ --enablerepo=PowerTools \
  && yum clean all 
  
 RUN yum -y update &&  \
  yum -y install \
  libnetfilter_log-devel hiredis-devel \
+  --enablerepo=PowerTools \
  && yum clean all 
 
 RUN yum -y update &&  \
  yum -y install \
  man man-pages iputils net-tools ethtool \
+  --enablerepo=PowerTools \
  && yum clean all
 
 RUN mkdir -p /opt/QA/results
@@ -32,3 +34,4 @@ RUN mkdir -p /opt/QA/results
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH=/root/.cargo/bin:$PATH
 RUN cargo install -f cbindgen --root /usr/
+
