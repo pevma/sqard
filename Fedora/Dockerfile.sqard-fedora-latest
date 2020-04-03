@@ -8,7 +8,7 @@ RUN dnf -y update && dnf -y upgrade &&  \
  pcre-devel libyaml-devel file-devel zlib-devel xz-devel jansson-devel \
  nss-devel libnet-devel libnetfilter_queue-devel \
  lua-devel libmaxminddb-devel hiredis-devel libnetfilter_log-devel \
- valgrind jq libevent-devel lz4-devel python3-distutils-extra \
+ valgrind jq libevent-devel lz4-devel python3-pyyaml python3-distutils-extra \
  && dnf clean all 
 
 RUN dnf -y update &&  \
@@ -20,3 +20,4 @@ RUN mkdir -p /opt/QA/results
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH=/root/.cargo/bin:$PATH
+RUN cargo install -f cbindgen --root /usr/
