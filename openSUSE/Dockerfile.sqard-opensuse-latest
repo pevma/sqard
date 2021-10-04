@@ -12,7 +12,7 @@ RUN zypper -n update &&  \
  GeoIP libmaxminddb-devel libmaxminddb0 gzip \
  libcap-ng0 libcap-ng-devel libmagic1 file-magic \
  hiredis-devel libnetfilter_log-devel valgrind python3-PyYAML jq \
- liblz4-devel python3-distutils-extra \
+ liblz4-devel python3-distutils-extra pcre2-devel \
  && zypper clean -a 
 
 RUN zypper -n update &&  \
