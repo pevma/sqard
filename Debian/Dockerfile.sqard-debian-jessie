@@ -5,7 +5,7 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sou
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  DEBIAN_FRONTEND=noninteractive apt-get install -y \
- wget curl git  python coccinelle clang flex bison \
+ wget curl git  python3 coccinelle clang flex bison \
  build-essential autoconf automake libtool pkg-config \
  libpcre3-dbg libpcre3-dev  libpcap-dev \
  libnet1-dev libyaml-0-2 libyaml-dev zlib1g-dev \
