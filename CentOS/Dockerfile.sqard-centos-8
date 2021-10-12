@@ -2,6 +2,10 @@ FROM centos:8
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN yum -y update &&  \
+ yum -y install  dnf-plugins-core && \
+ yum -y upgrade && yum config-manager --set-enabled powertools
+
+RUN yum -y update &&  \
  yum -y install \
  https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
@@ -15,19 +19,28 @@ RUN yum -y update &&  \
  lua-devel libmaxminddb-devel valgrind python3-pyyaml jq \
  libevent-devel lz4-devel python3-distutils-extra \
  pcre2-devel \
- --enablerepo=PowerTools \
+ --enablerepo=powertools --enablerepo=epel \
  && yum clean all 
  
 RUN yum -y update &&  \
+ wget http://repo.iotti.biz/CentOS/8/noarch/lux-release-8-1.noarch.rpm && \
+ rpm -Uvh lux-release-8-1.noarch.rpm && \
  yum -y install \
  libnetfilter_log-devel hiredis-devel \
-  --enablerepo=PowerTools \
+  --enablerepo=powertools --enablerepo=epel \
  && yum clean all 
 
+#RUN yum -y update &&  \
+# yum -y install \
+# hiredis-devel \
+#  --enablerepo=powertools \
+# && yum clean all 
+
+ 
 RUN yum -y update &&  \
  yum -y install \
  man man-pages iputils net-tools ethtool \
-  --enablerepo=PowerTools \
+  --enablerepo=powertools \
  && yum clean all
 
 RUN mkdir -p /opt/QA/results
