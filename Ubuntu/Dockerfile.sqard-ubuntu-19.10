@@ -3,7 +3,7 @@ MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  DEBIAN_FRONTEND=noninteractive apt-get install -y \
- wget curl python git coccinelle clang clang-tools \
+ wget curl python git clang clang-tools \
  clang-8 clang-tools-8 flex bison  \
  build-essential autoconf automake libtool pkg-config \
  libpcap-dev libcap-ng-dev libnetfilter-queue-dev \

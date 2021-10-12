@@ -1,9 +1,9 @@
-FROM i386/ubuntu:20.4
+FROM i386/ubuntu:20.04
 MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  DEBIAN_FRONTEND=noninteractive apt-get install -y \
- wget curl python git coccinelle clang flex bison  \
+ wget curl python git clang flex bison  \
  build-essential autoconf automake libtool pkg-config \
  libpcap-dev libcap-ng-dev libnetfilter-queue-dev \
  libpcre3-dev libpcre3 libpcre3-dbg \
