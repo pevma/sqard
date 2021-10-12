@@ -1,0 +1,26 @@
+FROM opensuse/leap
+MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
+
+RUN zypper -n update &&  \
+ zypper -n install \
+ which wget curl tar git coccinelle clang flex bison make \
+ autoconf automake libtool gcc gcc-c++ pkg-config \
+ libpcre1 pcre-devel libyaml-devel \
+ libpcap-devel zlib-devel xz-devel file-devel libnetfilter_queue-devel \
+ libjansson-devel libcap-ng-devel lua-devel \
+ mozilla-nspr-devel mozilla-nss-tools mozilla-nss-devel \
+ libmaxminddb-devel libmaxminddb0 gzip \
+ libcap-ng0 libcap-ng-devel libmagic1 file-magic \
+ hiredis-devel libnetfilter_log-devel valgrind python3-PyYAML jq \
+ liblz4-devel python3-distutils-extra pcre2-devel \
+ && zypper clean -a 
+
+RUN zypper -n update &&  \
+ zypper -n install \
+ man man-pages iputils net-tools ethtool \
+ && zypper clean -a 
+ 
+RUN mkdir -p /opt/QA/results
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH=/root/.cargo/bin:$PATH
