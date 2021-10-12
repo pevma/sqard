@@ -9,12 +9,13 @@ RUN zypper -n update &&  \
  libpcap-devel zlib-devel xz-devel file-devel libnetfilter_queue-devel \
  libjansson-devel libcap-ng-devel lua-devel \
  mozilla-nspr-devel mozilla-nss-tools mozilla-nss-devel \
- GeoIP libmaxminddb-devel libmaxminddb0 gzip libcap-ng0 \
+ libmaxminddb-devel libmaxminddb0 gzip libcap-ng0 \
  libcap-ng-devel libmagic1 file-magic \
  hiredis-devel libnetfilter_log-devel \
  valgrind python3-PyYAML jq liblz4-devel python3-distutils-extra \
- pcre2-devel \
- && zypper clean -a 
+ pcre2-devel
+ 
+RUN zypper  clean -a 
 
 RUN zypper -n update &&  \
  zypper -n install \
