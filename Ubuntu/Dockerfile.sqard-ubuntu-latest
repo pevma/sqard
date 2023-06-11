@@ -3,7 +3,7 @@ MAINTAINER pevma "peter.manev@openinfosecfoundation.org"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  DEBIAN_FRONTEND=noninteractive apt-get install -y \
- wget curl python git clang flex bison  \
+ wget curl python3 git clang flex bison  \
  build-essential autoconf automake libtool pkg-config \
  libpcap-dev libcap-ng-dev libnetfilter-queue-dev \
  libpcre3-dev libpcre3 libpcre3-dbg \
@@ -13,7 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade && \
  libhiredis-dev libprelude-dev libnetfilter-log-dev \
  valgrind libdevel-gdb-perl libcapture-tiny-perl \
  wireshark-common g++-multilib python3-yaml \
- python-yaml jq clang-tools libevent-dev \
+ jq clang-tools libevent-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
